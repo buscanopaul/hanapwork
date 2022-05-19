@@ -5,6 +5,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 const {width} = Dimensions.get('window');
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type Props = {};
 
@@ -82,6 +83,7 @@ const Swipe = (props: Props) => {
       setActiveLeft(false);
     } else {
       navigation.navigate('Auth');
+      AsyncStorage.setItem('onboardingKey', 'true');
     }
   };
 

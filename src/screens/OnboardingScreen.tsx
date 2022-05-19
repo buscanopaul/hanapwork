@@ -5,6 +5,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Swipe from '../components/Swipe';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type Props = {};
 
@@ -13,6 +14,7 @@ const OnboardingScreen = (props: Props) => {
 
   const handleLogin = () => {
     navigation.navigate('Auth');
+    AsyncStorage.setItem('onboardingKey', 'true');
   };
 
   return (
