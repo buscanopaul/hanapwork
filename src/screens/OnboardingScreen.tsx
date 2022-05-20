@@ -4,7 +4,7 @@ import tw from 'twrnc';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/AntDesign';
-import Swipe from '../components/Swipe';
+import Swipe from '../components/Onboarding/Swipe';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type Props = {};
