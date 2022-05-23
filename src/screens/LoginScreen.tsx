@@ -14,24 +14,15 @@ type Props = {};
 
 const LoginScreen = (props: Props) => {
   const navigation = useNavigation();
-  const handleHome = () => {
-    navigation.navigate('Main');
-  };
-
-  const handleReset = () => {
-    AsyncStorage.setItem('onboardingKey', 'false');
-  };
 
   return (
-    <SafeAreaView style={tw`flex-1 w-full h-full items-center justify-around`}>
+    <SafeAreaView
+      style={tw`flex-1 w-full h-full items-center justify-around bg-white`}>
       <LoginHeader />
       <LoginField />
       <LoginContinue />
       <LoginSocial />
       <LoginRegister />
-      {/* <TouchableOpacity onPress={handleHome}>
-        <Text>go to home</Text>
-      </TouchableOpacity> */}
     </SafeAreaView>
   );
 };

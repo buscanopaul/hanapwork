@@ -3,28 +3,35 @@ import React from 'react';
 import tw from 'twrnc';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 type Props = {};
 
 const LoginField = (props: Props) => {
+  const navigation = useNavigation();
+
   const handleShowPassword = () => {
     console.log('show password');
+  };
+
+  const handleHome = () => {
+    navigation.navigate('Main');
   };
 
   const handleRecoverPassword = () => {};
 
   return (
-    <View style={tw`px-6 w-full mt-10`}>
+    <View style={tw`px-6 w-full mt-4`}>
       <TextInput
         style={[
-          tw`bg-white h-13 p-3 px-4 rounded-xl text-black`,
+          tw`bg-white h-13 p-3 px-4 rounded-xl text-black border border-gray-300`,
           {fontFamily: 'Poppins-Regular'},
         ]}
         placeholder="Enter username"
       />
       <TextInput
         style={[
-          tw`mt-4 bg-white h-13 p-3 px-4 rounded-xl text-black`,
+          tw`mt-4 bg-white h-13 p-3 px-4 rounded-xl text-black border border-gray-300`,
           {fontFamily: 'Poppins-Regular'},
         ]}
         placeholder="Password"
@@ -45,21 +52,8 @@ const LoginField = (props: Props) => {
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={[
-          tw`p-4 rounded-xl mt-8`,
-          {
-            backgroundColor: '#3b5998',
-            shadowColor: '#3b5998',
-            shadowOffset: {
-              width: 0,
-              height: 10,
-            },
-            shadowOpacity: 0.31,
-            shadowRadius: 13.16,
-
-            elevation: 20,
-          },
-        ]}>
+        onPress={handleHome}
+        style={tw`p-4 rounded-xl mt-8 bg-blue-400`}>
         <Text style={tw`text-white text-center font-bold text-lg`}>
           Sign in
         </Text>
