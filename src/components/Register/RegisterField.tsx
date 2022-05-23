@@ -2,10 +2,16 @@ import {View, Text, TextInput} from 'react-native';
 import React from 'react';
 import tw from 'twrnc';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 type Props = {};
 
 const RegisterField = (props: Props) => {
+  const navigation = useNavigation();
+  const handleOTP = () => {
+    navigation.navigate('OTP');
+  };
+
   return (
     <View style={tw`mt-10`}>
       <TextInput
@@ -53,7 +59,9 @@ const RegisterField = (props: Props) => {
         ]}
       />
 
-      <TouchableOpacity style={tw`p-4 rounded-xl mt-8 bg-blue-400`}>
+      <TouchableOpacity
+        onPress={handleOTP}
+        style={tw`p-4 rounded-xl mt-8 bg-blue-400`}>
         <Text style={tw`text-white text-center font-bold text-lg`}>
           Register
         </Text>

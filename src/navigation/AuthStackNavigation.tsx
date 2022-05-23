@@ -5,6 +5,7 @@ import OnboardingScreen from '../screens/OnboardingScreen';
 import LoginScreen from '../screens/LoginScreen';
 import MainStackNavigation from './MainStackNavigation';
 import RegisterScreen from '../screens/RegisterScreen';
+import RegisterOTPScreen from '../screens/RegisterOTPScreen';
 
 type Props = {};
 
@@ -25,6 +26,7 @@ const AuthStackNavigation = (props: Props) => {
           options={{headerShown: false}}
         />
         <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="OTP" component={RegisterOTPScreen} />
       </Stack.Navigator>
     </>
   );
