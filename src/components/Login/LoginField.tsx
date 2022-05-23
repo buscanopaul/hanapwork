@@ -54,7 +54,11 @@ const LoginField = (props: Props) => {
       <TouchableOpacity
         onPress={handleHome}
         style={tw`p-4 rounded-xl mt-8 bg-blue-400`}>
-        <Text style={tw`text-white text-center font-bold text-lg`}>
+        <Text
+          style={[
+            tw`text-white text-center text-lg`,
+            {fontFamily: 'Poppins-SemiBold'},
+          ]}>
           Sign in
         </Text>
       </TouchableOpacity>

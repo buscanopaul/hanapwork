@@ -14,8 +14,13 @@ const RegisterHeader = (props: Props) => {
         ]}>
         Let's sign you up
       </Text>
-      <Text style={tw`text-black text-xl pt-2`}>Almost there.</Text>
-      <Text style={tw`text-black text-xl`}>Create an account to continue!</Text>
+      <Text
+        style={[tw`text-black text-lg pt-2`, {fontFamily: 'Poppins-Regular'}]}>
+        Almost there.
+      </Text>
+      <Text style={[tw`text-black text-lg`, {fontFamily: 'Poppins-Regular'}]}>
+        Create an account to continue!
+      </Text>
     </View>
   );
 };

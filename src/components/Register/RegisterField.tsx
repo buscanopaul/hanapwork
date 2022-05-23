@@ -62,7 +62,11 @@ const RegisterField = (props: Props) => {
       <TouchableOpacity
         onPress={handleOTP}
         style={tw`p-4 rounded-xl mt-8 bg-blue-400`}>
-        <Text style={tw`text-white text-center font-bold text-lg`}>
+        <Text
+          style={[
+            tw`text-white text-center text-lg`,
+            {fontFamily: 'Poppins-SemiBold'},
+          ]}>
           Register
         </Text>
       </TouchableOpacity>
