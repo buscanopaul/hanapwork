@@ -17,40 +17,46 @@ const HomeCompanies = (props: Props) => {
   return (
     <TouchableOpacity style={tw`px-6 mt-5`} onPress={handleDetails}>
       <ImageBackground
-        style={tw`h-80`}
+        style={tw`h-80 bg-blue-700 rounded-t-3xl`}
         imageStyle={{borderTopLeftRadius: 20, borderTopRightRadius: 20}}
         resizeMode="cover"
         source={{
           uri: 'https://static.dezeen.com/uploads/2017/08/apple-park-john-ive-architecture-offices_dezeen_hero-1a.jpg',
         }}>
         <LinearGradient
-          style={tw`flex-row h-full w-full p-5 justify-between items-end`}
+          style={tw`flex-col h-full w-full p-5 justify-between items-start`}
           colors={['rgba(0,0,0,0.7)', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0)']}
           start={{x: 0, y: 1}}
           end={{x: 0, y: 0}}>
-          <View>
-            <Text
-              style={[
-                tw`text-white text-xl`,
-                {fontFamily: 'Poppins-SemiBold'},
-              ]}>
-              Deloitte Inc.
-            </Text>
-            <Text style={[tw`text-white`, {fontFamily: 'Poppins-Regular'}]}>
-              Manila City
-            </Text>
+          <View style={tw`flex-row justify-between items-center w-full`}>
+            <View>
+              <Text
+                style={[
+                  tw`text-white text-xl`,
+                  {fontFamily: 'Poppins-SemiBold'},
+                ]}>
+                Deloitte Inc.
+              </Text>
+              <Text style={[tw`text-white`, {fontFamily: 'Poppins-Regular'}]}>
+                Manila City
+              </Text>
+            </View>
+            <View>
+              <Image
+                style={[
+                  tw`w-15 h-15 bg-white rounded-full`,
+                  {resizeMode: 'contain'},
+                ]}
+                source={{
+                  uri: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Deloitte_Logo.png',
+                }}
+              />
+            </View>
           </View>
-          <View>
-            <Image
-              style={[
-                tw`w-15 h-15 bg-white rounded-full`,
-                {resizeMode: 'contain'},
-              ]}
-              source={{
-                uri: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Deloitte_Logo.png',
-              }}
-            />
-          </View>
+          <Text
+            style={[tw`text-lg text-white`, {fontFamily: 'Poppins-SemiBold'}]}>
+            {'\u20B1'}12,000 / month
+          </Text>
         </LinearGradient>
       </ImageBackground>
       <View style={tw`bg-blue-200 p-4 rounded-b-2xl`}>

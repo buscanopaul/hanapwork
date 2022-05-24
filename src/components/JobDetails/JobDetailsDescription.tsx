@@ -7,7 +7,7 @@ type Props = {};
 
 const JobDetailsDescription = (props: Props) => {
   return (
-    <View style={tw`mt-5 mb-10`}>
+    <View style={tw`mt-5 mb-5`}>
       <Text style={[tw`text-xl text-black`, {fontFamily: 'Poppins-SemiBold'}]}>
         Deloitte Inc.
       </Text>
@@ -34,7 +34,7 @@ const JobDetailsDescription = (props: Props) => {
       <Text style={[tw`text-gray-500`, {fontFamily: 'Poppins-Regular'}]}>
         Posted 24 hours ago
       </Text>
-      <View style={tw`mt-3 bg-blue-400 w-43 p-2 rounded-lg`}>
+      <View style={tw`mt-3 bg-blue-400 self-start p-2 rounded-lg`}>
         <Text
           style={[tw`text-lg text-white`, {fontFamily: 'Poppins-SemiBold'}]}>
           {'\u20B1'}12,000 / month
