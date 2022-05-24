@@ -5,6 +5,9 @@ import OnboardingScreen from '../screens/OnboardingScreen';
 import LoginScreen from '../screens/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
 import {NavigationContainer} from '@react-navigation/native';
+import JobDetailsScreen from '../screens/JobDetailsScreen';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import tw from 'twrnc';
 
 type Props = {};
 
@@ -18,6 +21,24 @@ const MainStackNavigation = (props: Props) => {
           name="Home"
           component={HomeScreen}
           options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="JobDetails"
+          component={JobDetailsScreen}
+          options={{
+            title: '',
+            headerRight: () => (
+              <TouchableOpacity>
+                <Text
+                  style={[
+                    tw`text-blue-500 mr-3`,
+                    {fontFamily: 'Poppins-SemiBold'},
+                  ]}>
+                  Apply now!
+                </Text>
+              </TouchableOpacity>
+            ),
+          }}
         />
       </Stack.Navigator>
     </>

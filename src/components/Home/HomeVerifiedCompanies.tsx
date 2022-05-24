@@ -13,19 +13,18 @@ const DATA = [
   {
     id: '2',
     title: 'amazon',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png',
+    image: 'https://pngimg.com/uploads/amazon/amazon_PNG13.png',
   },
   {
     id: '3',
     title: 'Apple',
-    image: 'https://assets.stickpng.com/images/580b57fcd9996e24bc43c516.png',
+    image: 'https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png',
   },
   {
     id: '4',
     title: 'CVS',
     image:
-      'https://www.cvshealth.com/sites/default/files/styles/large/public/cvs-health-logo-stacked.png',
+      'https://download.logo.wine/logo/CVS_Health/CVS_Health-Logo.wine.png',
   },
   {
     id: '5',

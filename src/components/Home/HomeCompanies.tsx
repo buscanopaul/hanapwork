@@ -4,12 +4,18 @@ import tw from 'twrnc';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 type Props = {};
 
 const HomeCompanies = (props: Props) => {
+  const navigation = useNavigation();
+  const handleDetails = () => {
+    navigation.navigate('JobDetails');
+  };
+
   return (
-    <TouchableOpacity style={tw`px-6 mt-5`}>
+    <TouchableOpacity style={tw`px-6 mt-5`} onPress={handleDetails}>
       <ImageBackground
         style={tw`h-80`}
         imageStyle={{borderTopLeftRadius: 20, borderTopRightRadius: 20}}
@@ -37,7 +43,7 @@ const HomeCompanies = (props: Props) => {
           <View>
             <Image
               style={[
-                tw`w-15 h-15 bg-blue-400 rounded-full`,
+                tw`w-15 h-15 bg-white rounded-full`,
                 {resizeMode: 'contain'},
               ]}
               source={{
@@ -87,23 +93,23 @@ const HomeCompanies = (props: Props) => {
         <View style={tw`flex-row items-center flex-wrap mt-7`}>
           <View
             style={tw`mr-3 flex-row items-center bg-blue-300 p-2 rounded-md`}>
-            <Icon name="eye" size={15} color="black" />
+            <Icon name="user" size={15} color="black" />
             <Text style={[tw`text-xs pl-1`, {fontFamily: 'Poppins-Regular'}]}>
               Customer Support
             </Text>
           </View>
           <View
             style={tw`mr-3 flex-row items-center bg-blue-300 p-2 rounded-md`}>
-            <Icon name="eye" size={15} color="black" />
+            <Icon name="book" size={15} color="black" />
             <Text style={[tw`text-xs pl-1`, {fontFamily: 'Poppins-Regular'}]}>
               Admin
             </Text>
           </View>
           <View
-            style={tw`mr-3 flex-row items-center bg-blue-300 p-2 rounded-md mt-10`}>
-            <Icon name="eye" size={15} color="black" />
+            style={tw`mr-3 flex-row items-center bg-blue-300 p-2 rounded-md mt-8`}>
+            <Icon name="search1" size={15} color="black" />
             <Text style={[tw`text-xs pl-1`, {fontFamily: 'Poppins-Regular'}]}>
-              Customer Support
+              Research
             </Text>
           </View>
         </View>
