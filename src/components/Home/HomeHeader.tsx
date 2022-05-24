@@ -23,7 +23,7 @@ const HomeHeader = (props: Props) => {
       </View>
       <View style={tw`flex-row items-center`}>
         <TouchableOpacity>
-          <Icon style={tw`mr-5`} name="search1" size={22} color="black" />
+          <Icon style={tw`mr-5`} name="back" size={22} color="black" />
         </TouchableOpacity>
         <TouchableOpacity>
           <Image
