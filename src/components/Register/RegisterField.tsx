@@ -3,6 +3,8 @@ import React from 'react';
 import tw from 'twrnc';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
+import FormField from '../FormField';
+import ButtonTemplate from '../ButtonTemplate';
 
 type Props = {};
 
@@ -11,42 +13,17 @@ const RegisterField = (props: Props) => {
   const handleOTP = () => {
     navigation.navigate('OTP');
   };
-
   return (
     <View style={tw`mt-10`}>
-      <TextInput
-        placeholder="Enter first name"
-        style={[
-          tw`rounded-xl border h-13 border-gray-300 p-3 px-4 text-black`,
-          {fontFamily: 'Poppins-Regular'},
-        ]}
-      />
-      <TextInput
-        placeholder="Last name"
-        style={[
-          tw`rounded-xl border h-13 border-gray-300 p-3 px-4 text-black mt-5`,
-          {fontFamily: 'Poppins-Regular'},
-        ]}
-      />
-      <TextInput
-        placeholder="Email address"
-        style={[
-          tw`rounded-xl border h-13 border-gray-300 p-3 px-4 text-black mt-5`,
-          {fontFamily: 'Poppins-Regular'},
-        ]}
-      />
-      <TextInput
-        placeholder="Phone"
-        style={[
-          tw`rounded-xl border h-13 border-gray-300 p-3 px-4 text-black mt-5`,
-          {fontFamily: 'Poppins-Regular'},
-        ]}
-      />
+      <FormField placeholder="Enter First name" />
+      <FormField placeholder="Last name" />
+      <FormField placeholder="Email address" />
+      <FormField placeholder="Phone" />
       <TextInput
         placeholder="Password"
         secureTextEntry={true}
         style={[
-          tw`rounded-xl border h-13 border-gray-300 p-3 px-4 text-black mt-5`,
+          tw`rounded-xl border h-13 border-gray-300 p-3 px-4 text-black mb-5`,
           {fontFamily: 'Poppins-Regular'},
         ]}
       />
@@ -54,22 +31,17 @@ const RegisterField = (props: Props) => {
         placeholder="Re-enter Password"
         secureTextEntry={true}
         style={[
-          tw`rounded-xl border h-13 border-gray-300 p-3 px-4 text-black mt-5`,
+          tw`rounded-xl border h-13 border-gray-300 p-3 px-4 text-black mb-5`,
           {fontFamily: 'Poppins-Regular'},
         ]}
       />
 
-      <TouchableOpacity
+      <ButtonTemplate
         onPress={handleOTP}
-        style={tw`p-4 rounded-xl mt-8 bg-blue-400`}>
-        <Text
-          style={[
-            tw`text-white text-center text-lg`,
-            {fontFamily: 'Poppins-SemiBold'},
-          ]}>
-          Register
-        </Text>
-      </TouchableOpacity>
+        title="Register"
+        bgColor="blue"
+        titleColor="white"
+      />
     </View>
   );
 };

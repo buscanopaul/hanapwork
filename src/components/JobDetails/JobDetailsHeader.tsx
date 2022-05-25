@@ -6,7 +6,7 @@ type Props = {};
 
 const JobDetailsHeader = (props: Props) => {
   return (
-    <View>
+    <View style={tw`px-6`}>
       <Image
         style={[tw`h-57 bg-blue-300 rounded-xl mt-5`, {resizeMode: 'contain'}]}
         source={{
@@ -15,7 +15,7 @@ const JobDetailsHeader = (props: Props) => {
       />
       <Image
         style={[
-          tw`w-15 h-15 bg-white rounded-full absolute bottom-5 right-5`,
+          tw`w-15 h-15 bg-white rounded-full absolute bottom-5 right-10`,
           {resizeMode: 'contain'},
         ]}
         source={{

@@ -4,6 +4,8 @@ import tw from 'twrnc';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
+import FormField from '../FormField';
+import ButtonTemplate from '../ButtonTemplate';
 
 type Props = {};
 
@@ -22,16 +24,10 @@ const LoginField = (props: Props) => {
 
   return (
     <View style={tw`px-6 w-full mt-4`}>
+      <FormField placeholder="Enter username" />
       <TextInput
         style={[
-          tw`bg-white h-13 p-3 px-4 rounded-xl text-black border border-gray-300`,
-          {fontFamily: 'Poppins-Regular'},
-        ]}
-        placeholder="Enter username"
-      />
-      <TextInput
-        style={[
-          tw`mt-4 bg-white h-13 p-3 px-4 rounded-xl text-black border border-gray-300`,
+          tw`mb-4 bg-white h-13 p-3 px-4 rounded-xl text-black border border-gray-300`,
           {fontFamily: 'Poppins-Regular'},
         ]}
         placeholder="Password"
@@ -39,29 +35,26 @@ const LoginField = (props: Props) => {
       />
       <TouchableOpacity
         onPress={handleShowPassword}
-        style={tw`absolute right-3 bottom-2 z-50 p-1`}>
+        style={tw`absolute right-3 bottom-6 z-50 p-1`}>
         <Icon style={tw``} name="eye" size={25} color="lightgray" />
       </TouchableOpacity>
-      <TouchableOpacity onPress={handleRecoverPassword} style={tw`mt-4`}>
-        <Text
-          style={[
-            tw`text-right text-xs text-black`,
-            {fontFamily: 'Poppins-Regular'},
-          ]}>
-          Recovery Password
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity
+      <View style={tw`flex-row flex-wrap justify-end`}>
+        <TouchableOpacity onPress={handleRecoverPassword} style={tw`mt-1`}>
+          <Text
+            style={[
+              tw`text-right text-xs text-black`,
+              {fontFamily: 'Poppins-Regular'},
+            ]}>
+            Recovery Password
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <ButtonTemplate
         onPress={handleHome}
-        style={tw`p-4 rounded-xl mt-8 bg-blue-400`}>
-        <Text
-          style={[
-            tw`text-white text-center text-lg`,
-            {fontFamily: 'Poppins-SemiBold'},
-          ]}>
-          Sign in
-        </Text>
-      </TouchableOpacity>
+        title="Sign in"
+        bgColor="blue"
+        titleColor="white"
+      />
     </View>
   );
 };
