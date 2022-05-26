@@ -3,14 +3,16 @@ import React from 'react';
 import tw from 'twrnc';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
+import ButtonTemplate from '../components/ButtonTemplate';
 
 type Props = {};
 
-const OTPSuccess = (props: Props) => {
+const SuccessScreen = ({route}) => {
   const navigation = useNavigation();
+  const {message} = route.params;
 
   const handleHome = () => {
-    navigation.navigate('Main');
+    navigation.popToTop();
   };
 
   return (
@@ -35,25 +37,20 @@ const OTPSuccess = (props: Props) => {
               tw`text-center text-white`,
               {fontFamily: 'Poppins-Regular'},
             ]}>
-            Your phone number has been verified successfully.
+            {message}
           </Text>
         </View>
         <View style={tw`w-full`}>
-          <TouchableOpacity
+          <ButtonTemplate
             onPress={handleHome}
-            style={tw`bg-white w-full p-4 rounded-xl`}>
-            <Text
-              style={[
-                tw`text-black text-center text-lg`,
-                {fontFamily: 'Poppins-SemiBold'},
-              ]}>
-              Get Started
-            </Text>
-          </TouchableOpacity>
+            title="Get Started"
+            bgColor="white"
+            titleColor="black"
+          />
         </View>
       </View>
     </SafeAreaView>
   );
 };
 
-export default OTPSuccess;
+export default SuccessScreen;

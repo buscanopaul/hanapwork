@@ -3,6 +3,7 @@ import React from 'react';
 import tw from 'twrnc';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
+import ButtonTemplate from '../components/ButtonTemplate';
 
 type Props = {};
 
@@ -10,7 +11,9 @@ const OTPScreen = (props: Props) => {
   const navigation = useNavigation();
 
   const handleVerify = () => {
-    navigation.navigate('OTPSuccess');
+    navigation.navigate('Success', {
+      message: 'Your phone number has been verified successfully.',
+    });
   };
 
   return (
@@ -49,17 +52,12 @@ const OTPScreen = (props: Props) => {
           </Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity
+      <ButtonTemplate
         onPress={handleVerify}
-        style={tw`p-4 rounded-xl mt-10 bg-blue-400`}>
-        <Text
-          style={[
-            tw`text-white text-center text-lg`,
-            {fontFamily: 'Poppins-SemiBold'},
-          ]}>
-          Verify
-        </Text>
-      </TouchableOpacity>
+        title="Verify"
+        bgColor="blue"
+        titleColor="white"
+      />
     </View>
   );
 };

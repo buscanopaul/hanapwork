@@ -7,7 +7,7 @@ type Props = {};
 
 const JobDetailsCategories = (props: Props) => {
   return (
-    <View style={tw`mb-10 flex-row flex-wrap`}>
+    <View style={tw`mb-10 flex-row flex-wrap px-6`}>
       <View
         style={tw`mr-3 flex-row items-center bg-blue-400 p-2 rounded-md mt-5`}>
         <Icon name="search1" size={15} color="white" />

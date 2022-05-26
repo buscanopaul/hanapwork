@@ -3,14 +3,20 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
 import tw from 'twrnc';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {DrawerActions, useNavigation} from '@react-navigation/native';
 
 type Props = {};
 
 const HomeHeader = (props: Props) => {
+  const navigation = useNavigation();
+  const handleOpenDrawer = () => {
+    navigation.dispatch(DrawerActions.openDrawer());
+  };
+
   return (
     <View style={tw`flex-row justify-between items-center px-6`}>
       <View style={tw`flex-row items-center`}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleOpenDrawer}>
           <Icon style={tw``} name="menufold" size={22} color="black" />
         </TouchableOpacity>
         <Text
