@@ -7,6 +7,7 @@ import MainStackNavigation from './MainStackNavigation';
 import RegisterScreen from '../screens/RegisterScreen';
 import OTPScreen from '../screens/OTPScreen';
 import SuccessScreen from '../screens/SuccessScreen';
+import DrawerNavigation from './DrawerNavigation';
 
 type Props = {};
 
@@ -23,7 +24,7 @@ const AuthStackNavigation = (props: Props) => {
         />
         <Stack.Screen
           name="Main"
-          component={MainStackNavigation}
+          component={DrawerNavigation}
           options={{headerShown: false}}
         />
         <Stack.Screen name="Register" component={RegisterScreen} />

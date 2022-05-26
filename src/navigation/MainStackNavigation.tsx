@@ -16,19 +16,23 @@ const Stack = createStackNavigator();
 const MainStackNavigation = (props: Props) => {
   const navigation = useNavigation();
   const handleApply = () => {
-    Alert.alert('Alert Title', 'My Alert Message', [
-      {
-        text: 'OK',
-        onPress: () =>
-          navigation.navigate('Success', {
-            message: `You have successfully applied to the Senior Software Engineer at Deloitte Inc.`,
-          }),
-      },
-      {
-        text: 'Cancel',
-        onPress: () => console.log('Ok Pressed'),
-      },
-    ]);
+    Alert.alert(
+      'Confirmation!',
+      'Are you sure you want to apply for this job position?',
+      [
+        {
+          text: 'Yes',
+          onPress: () =>
+            navigation.navigate('Success', {
+              message: `You have successfully applied to the Senior Software Engineer at Deloitte Inc.`,
+            }),
+        },
+        {
+          text: 'No',
+          onPress: () => console.log('Ok Pressed'),
+        },
+      ],
+    );
   };
 
   return (
