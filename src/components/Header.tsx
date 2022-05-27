@@ -7,7 +7,7 @@ import {DrawerActions, useNavigation} from '@react-navigation/native';
 
 type Props = {};
 
-const HomeHeader = (props: Props) => {
+const Header = (props: Props) => {
   const navigation = useNavigation();
   const handleOpenDrawer = () => {
     navigation.dispatch(DrawerActions.openDrawer());
@@ -47,4 +47,4 @@ const HomeHeader = (props: Props) => {
   );
 };
 
-export default HomeHeader;
+export default Header;
