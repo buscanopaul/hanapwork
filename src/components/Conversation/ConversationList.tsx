@@ -3,6 +3,7 @@ import React from 'react';
 import tw from 'twrnc';
 import ConversationHeader from './ConversationHeader';
 import {KeyboardAwareFlatList} from 'react-native-keyboard-aware-scroll-view';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 type Props = {};
 
@@ -10,32 +11,28 @@ const DATA = [
   {
     id: '1',
     userId: 1,
-    image:
-      'https://images.unsplash.com/photo-1553531540-d99596614a82?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470',
+    image: 'https://www.sanmiguel.com.ph/img/SMC-FB-Banner-2021.jpg',
     message: 'Hi Paul',
     time: '35',
   },
   {
     id: '2',
     userId: 1,
-    image:
-      'https://images.unsplash.com/photo-1553531540-d99596614a82?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470',
+    image: 'https://www.sanmiguel.com.ph/img/SMC-FB-Banner-2021.jpg',
     message: 'We went to the same School, I cannot belive we have never met!',
     time: '30',
   },
   {
     id: '3',
     userId: 0,
-    image:
-      'https://images.unsplash.com/photo-1553531540-d99596614a82?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470',
+    image: 'https://www.sanmiguel.com.ph/img/SMC-FB-Banner-2021.jpg',
     message: 'Really?',
     time: '30',
   },
   {
     id: '4',
     userId: 1,
-    image:
-      'https://images.unsplash.com/photo-1553531540-d99596614a82?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470',
+    image: 'https://www.sanmiguel.com.ph/img/SMC-FB-Banner-2021.jpg',
     message: 'Been here 5 years',
     time: '28',
   },
@@ -63,7 +60,7 @@ const ConversationList = (props: Props) => {
       <View
         style={tw`flex-row items-end justify-${
           item.userId == 0 ? `end` : `start`
-        } mb-5 ${item.length && `mb-20`}`}>
+        } ${item.length ? `mb-20` : `mb-5`}`}>
         {item.userId != 0 && (
           <Image
             style={[tw`w-5 h-5 rounded-full bottom-1`, {resizeMode: 'cover'}]}

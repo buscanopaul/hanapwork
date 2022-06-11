@@ -14,15 +14,20 @@ const ConversationTextField = (props: Props) => {
     }
   };
 
+  const onChangeChat = (text: string) => {
+    console.log(text);
+  };
+
   return (
     <View
       style={[
-        tw`px-6 flex-row justify-between items-end pt-3 bg-white absolute`,
-        {height: textHeight + 50, bottom: -70},
+        tw`px-6 flex-row justify-between items-end pt-3`,
+        {height: textHeight + 50, bottom: 70},
       ]}>
       <TextInput
         onContentSizeChange={event => handleSizeChange(event)}
         multiline={true}
+        onChangeText={text => onChangeChat(text)}
         style={[
           tw`bg-white p-3 rounded-xl text-black border border-gray-300 w-11/12`,
           {fontFamily: 'Poppins-Regular', height: textHeight + 30},

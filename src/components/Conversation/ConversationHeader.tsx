@@ -21,11 +21,14 @@ const ConversationHeader = (props: Props) => {
             {resizeMode: 'cover'},
           ]}
           source={{
-            uri: 'https://images.unsplash.com/photo-1553531540-d99596614a82?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470',
+            uri: 'https://www.sanmiguel.com.ph/img/SMC-FB-Banner-2021.jpg',
           }}
         />
         <Text style={[tw`w-70 pl-4`, {fontFamily: 'Poppins-Regular'}]}>
-          You are matches with Georgia Wongkono.
+          You are matches with{' '}
+          <Text style={{fontFamily: 'Poppins-SemiBold'}}>
+            San Miguel Corporation
+          </Text>
         </Text>
       </View>
     </View>

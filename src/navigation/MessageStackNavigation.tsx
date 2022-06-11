@@ -1,10 +1,12 @@
 import {View, Text} from 'react-native';
-import React from 'react';
+import React, {useCallback, useMemo, useRef} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import MessagesScreen from '../screens/MessagesScreen';
 import ConversationScreen from '../screens/ConversationScreen';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/AntDesign';
+import {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import BottomSheet from '@gorhom/bottom-sheet';
 
 type Props = {};
 
@@ -19,17 +21,7 @@ const MessageStackNavigation = (props: Props) => {
           component={MessagesScreen}
           options={{headerShown: false}}
         />
-        <Stack.Screen
-          name="Conversation"
-          component={ConversationScreen}
-          options={{
-            headerRight: () => (
-              <TouchableOpacity>
-                <Icon name="infocirlce" size={20} color="#60a5fa" />
-              </TouchableOpacity>
-            ),
-          }}
-        />
+        <Stack.Screen name="Conversation" component={ConversationScreen} />
       </Stack.Navigator>
     </>
   );

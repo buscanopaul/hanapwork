@@ -7,15 +7,17 @@ import Header from '../components/Header';
 
 type Props = {};
 
-const HomeScreen = (props: Props) => {
+const HomeScreen = (props: Props, onPress) => {
   return (
-    <SafeAreaView style={tw`bg-white h-full`}>
-      <View style={tw``}>
-        <Header />
-        <HomeVerifiedCompanies />
-        <HomeCompanies />
-      </View>
-    </SafeAreaView>
+    <>
+      <SafeAreaView style={tw`bg-white flex-1`}>
+        <View style={tw`h-5/6`}>
+          <Header undoStatus={true} />
+          <HomeVerifiedCompanies />
+          <HomeCompanies />
+        </View>
+      </SafeAreaView>
+    </>
   );
 };
 
