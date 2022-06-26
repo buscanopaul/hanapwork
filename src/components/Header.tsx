@@ -7,11 +7,12 @@ import {DrawerActions, useNavigation} from '@react-navigation/native';
 
 type Props = {};
 
-const HomeHeader = (props: Props) => {
+const Header = (props: Props) => {
   const navigation = useNavigation();
   const handleOpenDrawer = () => {
     navigation.dispatch(DrawerActions.openDrawer());
   };
+  const undo = props.undoStatus;
 
   return (
     <View style={tw`flex-row justify-between items-center px-6`}>
@@ -28,9 +29,11 @@ const HomeHeader = (props: Props) => {
         </Text>
       </View>
       <View style={tw`flex-row items-center`}>
-        <TouchableOpacity>
-          <Icon style={tw`mr-5`} name="back" size={22} color="black" />
-        </TouchableOpacity>
+        {undo && (
+          <TouchableOpacity>
+            <Icon style={tw`mr-5`} name="back" size={22} color="black" />
+          </TouchableOpacity>
+        )}
         <TouchableOpacity>
           <Image
             style={[
@@ -47,4 +50,4 @@ const HomeHeader = (props: Props) => {
   );
 };
 
-export default HomeHeader;
+export default Header;

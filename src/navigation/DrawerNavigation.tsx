@@ -8,6 +8,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import CustomDrawer from '../components/CustomDrawer';
 import Icon from 'react-native-vector-icons/AntDesign';
+import MessageStackNavigation from './MessageStackNavigation';
 
 type Props = {};
 
@@ -36,7 +37,7 @@ const DrawerNavigation = (props: Props) => {
         />
         <Drawer.Screen
           name="Messages"
-          component={MessagesScreen}
+          component={MessageStackNavigation}
           options={{
             drawerIcon: ({color}) => (
               <Icon name="message1" size={20} color={color} />

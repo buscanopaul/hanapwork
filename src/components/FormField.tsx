@@ -14,6 +14,12 @@ const FormField = (props: Props) => {
           {fontFamily: 'Poppins-Regular'},
         ]}
         placeholder={props.placeholder}
+        value={props.value}
+        onChangeText={props.onChangeText}
+        keyboardType={props.keyboardType}
+        maxLength={props.maxLength}
+        autoCapitalize={props.autoCapitalize}
+        autoComplete="false"
       />
     </>
   );
