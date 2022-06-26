@@ -52,6 +52,13 @@ const RegisterField = (props: Props) => {
       ]);
     } else {
       console.log('tama');
+      createUserWithEmailAndPassword(authentication, email, password)
+        .then(res => {
+          console.log('res', res);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   };
 
@@ -68,6 +75,7 @@ const RegisterField = (props: Props) => {
       <FormField
         placeholder="Email address"
         onChangeText={newEmail => setEmail(newEmail)}
+        autoCapitalize="none"
       />
       <FormField
         placeholder="Phone"
@@ -76,6 +84,7 @@ const RegisterField = (props: Props) => {
         maxLength={10}
       />
       <TextInput
+        autoCapitalize="none"
         placeholder="Password"
         secureTextEntry={true}
         style={[
@@ -85,6 +94,7 @@ const RegisterField = (props: Props) => {
         onChangeText={newPassword => setPassword(newPassword)}
       />
       <TextInput
+        autoCapitalize="none"
         placeholder="Re-enter Password"
         secureTextEntry={true}
         style={[

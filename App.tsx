@@ -6,13 +6,14 @@ import OnboardingStackNavigation from './src/navigation/OnboardingStackNavigatio
 import AuthStackNavigation from './src/navigation/AuthStackNavigation';
 import DrawerNavigation from './src/navigation/DrawerNavigation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import AuthProvider from './src/hooks/useAuth';
+import {AuthProvider} from './src/hooks/useAuth';
+import StackNavigator from './src/navigation/StackNavigator';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   const [onboard, setOnBoard] = useState();
-  const user = false;
+  // const user = false;
 
   useEffect(() => {
     const appData = AsyncStorage.getItem('onboardingKey').then(appData => {
@@ -33,10 +34,8 @@ const App = () => {
               name="Onboard"
               component={OnboardingStackNavigation}
             />
-          ) : user ? (
-            <Stack.Screen name="root" component={DrawerNavigation} />
           ) : (
-            <Stack.Screen name="Auth" component={AuthStackNavigation} />
+            <Stack.Screen name="MainStack" component={StackNavigator} />
           )}
         </Stack.Navigator>
       </AuthProvider>

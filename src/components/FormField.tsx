@@ -18,6 +18,8 @@ const FormField = (props: Props) => {
         onChangeText={props.onChangeText}
         keyboardType={props.keyboardType}
         maxLength={props.maxLength}
+        autoCapitalize={props.autoCapitalize}
+        autoComplete="false"
       />
     </>
   );
